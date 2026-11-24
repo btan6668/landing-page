@@ -1,0 +1,73 @@
+/* Edit these colors to customize the entire page. */
+:root {
+  color-scheme: dark;
+  --green: #00bb00;
+  --accent: #c5ff73;
+  --text: #ffffff;
+  --muted: #c2d0c0;
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; background: #000; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #001005;
+background-image: url("img/background.png");
+background-position: center top;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+  padding: 38px 20px 30px;
+}
+.profile { width: min(100%, 448px); margin-inline: auto; text-align: center; }
+.avatar {
+  display: block;
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  margin: 0 auto 24px;
+  border: 4px solid var(--accent);
+  border-radius: 50%;
+  background: #063408;
+}
+h1 { margin: 0 0 10px; color: var(--accent); font-size: 36px; line-height: 1.15; font-weight: 800; overflow-wrap: anywhere; }
+.bio { margin: 0; font-size: 17px; line-height: 1.5; }
+.handle { margin: 2px 0 0; font-size: 14px; color: var(--muted); overflow-wrap: anywhere; }
+.welcome { margin: 32px 0; padding: 25px 20px; border: 2px solid #ffffff29; border-radius: 24px; background: #071b0bbd; }
+.welcome h2 { margin: 0 0 10px; color: var(--accent); font-size: 23px; line-height: 1.3; overflow-wrap: anywhere; }
+.welcome p { margin: 0; font-size: 17px; line-height: 1.5; }
+.links { display: grid; gap: 16px; }
+.link { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 60px; padding: 14px 20px; border: 3px solid #fff; border-radius: 16px; background: #00000030; color: var(--text); text-decoration: none; font-size: 20px; font-weight: 700; line-height: 1.3; transition: background .18s, transform .18s; overflow-wrap: anywhere; }
+.link .icon { width: 22px; height: 22px; flex: 0 0 22px; }
+.link span:last-child { min-width: 0; }
+.link.primary { background: var(--accent); color: #061006; border-color: var(--accent); animation: invite-bounce 2.8s ease-in-out infinite; }
+@keyframes invite-bounce {
+  0%, 12%, 28%, 44%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-7px); }
+  36% { transform: translateY(-3px); }
+}
+.link.primary:hover, .link.primary:focus-visible, .link.primary:active { animation: none; transform: none; }
+.link:hover { background: #ffffff1f; transform: translateY(-2px); }
+.link.primary:hover { background: #d7ff9e; }
+.link:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+.notice { display: none; margin: 24px 0 0; padding: 16px; border-radius: 12px; background: #153018; font-size: 14px; line-height: 1.5; }
+.notice:target { display: block; }
+@media (max-width: 600px) {
+  body {
+    padding: max(24px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+    background-attachment: scroll;
+  }
+  .avatar { width: clamp(104px, 30vw, 132px); height: clamp(104px, 30vw, 132px); margin-bottom: 16px; border-width: 3px; }
+  h1 { font-size: clamp(26px, 7vw, 30px); margin-bottom: 8px; }
+  .bio { font-size: 15px; overflow-wrap: anywhere; }
+  .welcome { margin: 22px 0 26px; padding: 18px 14px; border-radius: 20px; }
+  .welcome h2 { font-size: 20px; margin-bottom: 8px; }
+  .welcome p { font-size: 15px; }
+  .links { gap: 12px; }
+  .link { min-height: 56px; padding: 13px 12px; gap: 9px; font-size: clamp(15px, 4.3vw, 17px); border-width: 2px; border-radius: 14px; touch-action: manipulation; }
+  .link .icon { width: 20px; height: 20px; flex-basis: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { .link { transition: none; } .link.primary { animation: none; } .link:hover { transform: none; } }
